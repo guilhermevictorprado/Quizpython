@@ -1,0 +1,88 @@
+import sys
+
+
+def exibir_menu():
+    print("\nMENU:")
+    print("1 - Aprender")
+    print("2 - Quiz")
+    print("3 - Sair")
+
+
+def aprender():
+    print("\n1 - Aprenda como exibir mensagens na tela:")
+    print("📝 A função print() mostra coisas na tela:\n digite: 'print(mensagem que pretende ser exibida)'")
+    print('''\nExemplos:
+print("Olá mundo!")  # Exemplo 1
+print(123)  # Exemplo 2
+print("2 + 2 =", 2+2)  # Exemplo 3''')
+
+    print("\n2 - Aprenda como receber dados do usuário:")
+    print('''📝 A função input() recebe os dados do usuário:
+Por exemplo:
+nome = input("Digite seu nome: ")
+print("Olá,", nome, "!")''')
+
+
+def quiz():
+    # Primeira pergunta
+    print('''\nQual das seguintes opções descreve corretamente a função print() em Python?
+    
+a) A função print() é usada apenas para exibir números inteiros no console.
+b) A função print() pode exibir múltiplos argumentos separados por vírgula e adiciona um espaço entre eles automaticamente.
+c) A função print() só funciona se você importar o módulo sys antes de usá-la.
+d) A função print() retorna o valor impresso para ser armazenado em uma variável.
+''')
+
+    resposta_correta = 'b'
+    resposta_usuario = input(
+        "Digite a letra da sua resposta (a, b, c ou d): ").strip().lower()
+
+    while resposta_usuario not in ['a', 'b', 'c', 'd']:
+        print("Opção inválida! Digite apenas a, b, c ou d.")
+        resposta_usuario = input("Tente novamente: ").strip().lower()
+
+    if resposta_usuario == resposta_correta:
+        print("\n✅ Correto! A função print() aceita múltiplos argumentos e os separa com espaço por padrão.")
+    else:
+        print(f"\n❌ Incorreto! A resposta correta é '{resposta_correta}'.")
+
+    # Segunda pergunta
+    print('''\nQual é a função do input() em Python?
+    
+1) Exibir dados no console sem que o usuário precise interagir.
+2) Permitir que o usuário digite dados que serão capturados pelo programa.
+3) Converter automaticamente strings em números inteiros.
+4) Fazer cálculos matemáticos com base em variáveis pré-definidas.
+''')
+
+    resposta_correta2 = '2'
+    resposta2 = input("Digite o número da opção correta: ").strip()
+
+    while resposta2 not in ['1', '2', '3', '4']:
+        print("Opção inválida! Digite apenas 1, 2, 3 ou 4.")
+        resposta2 = input("Tente novamente: ").strip()
+
+    if resposta2 == resposta_correta2:
+        print("\n✅ Correto! O input() pausa a execução e captura dados digitados pelo usuário (sempre como string).")
+    else:
+        print(f"\n❌ Incorreto! A resposta correta é '2'.")
+
+
+def main():
+    while True:
+        exibir_menu()
+        opcao = input("\nEscolha uma opção: ").strip()
+
+        if opcao == "1":
+            aprender()
+        elif opcao == "2":
+            quiz()
+        elif opcao == "3":
+            print("Saindo do programa...")
+            sys.exit()
+        else:
+            print("Opção inválida. Tente novamente.")
+
+
+if __name__ == "__main__":
+    main()

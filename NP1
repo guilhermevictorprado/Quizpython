@@ -1,0 +1,358 @@
+import sys
+
+# Funções de menu
+
+
+def exibir_menu():
+    print("\nMENU PRINCIPAL:")
+    print("1 - Aprender sobre Python")
+    print("2 - Testar conhecimentos no Quiz")
+    print("3 - Sair do programa")
+
+# Funções de aprendizado
+
+
+def aprender_datahora():
+    print("\n📝 Obter data e hora atuais:")
+    print("""from datetime import datetime
+
+# Obter a data e hora atuais
+data_hora_agora = datetime.now()
+print("Data e hora atuais:", data_hora_agora)""")
+    print(" #OUTPUT: DATA DA MAQUINA QUE ESTIVER SENDO EXECUTADO O PROGRAMA.")
+
+
+def aprender_sqrt():
+    print("\n📝 fazer operações de raiz quadrada:")
+    print("1.Importar o módulo: Use a instrução import seguida do nome do módulo:")
+    print("2.Após a importação, você pode acessar as funções e variáveis do módulo usando o nome do módulo seguido do operador de ponto (.). Por exemplo, para usar a função sqrt do módulo math:")
+    print("""resultado = math.sqrt(16)  # resultado será 4.0""")
+
+
+def aprender_tratamentoderros():
+    print("\n📝 Tratamento de erros:")
+    print(" envolver o código que recebe a entrada do usuário em um loop while que continua até que uma entrada válida seja fornecida. Dentro do bloco try, você tenta converter a entrada do usuário para um número inteiro. Se ocorrer um ValueError, o bloco except é executado, mostrando uma mensagem de erro e, em seguida, o loop while continua, permitindo que o usuário tente novamente.")
+    print("""while True:
+    try:
+        numero = int(input("Digite um número: "))
+        print(f"Você digitou: {numero}")
+        break  # Sai do loop se a conversão for bem-sucedida
+    except ValueError:
+        print("Isso não é um número! Tente novamente.")""")
+
+
+def aprender_while():
+    print("\n📝 WHILE")
+    print("while permite executar um bloco de código repetidamente enquanto uma condição for verdadeira")
+    print("""contador = 0
+while contador < 5:
+    print(contador)
+    contador += 1
+# Saída:
+# 0
+# 1
+# 2
+# 3
+# 4""")
+
+
+def aprender_strings():
+    print("\n📝 Criar uma string e a edita-lá")
+    print("Strings têm métodos úteis, como .upper().")
+    print("""texto = "python"  
+print(texto.upper())  # PYTHON  """)
+
+
+def aprender_dicionarioalfabetico():
+    print("\n📝 Criar um dicionario em ordem alfabética:")
+    print("""pessoas = [
+    {"nome": "Ana", "idade": 20},
+    {"nome": "Roberto", "idade": 22},
+    {"nome": "Bruno", "idade": 30},""")
+    print("""Para ordenar a lista de dicionários basta passar o parâmetro key para a função sorted para "ensinar" a função como pegar o valor pelo qual você quer ordenar.""")
+    print("""pessoas_ordenado = sorted(pessoas, key=lambda obj: obj["nome"])
+
+for pessoa in pessoas_ordenado:
+    print(f"{pessoa['nome']} tem {pessoa['idade']} anos.")
+
+Saída:
+
+Ana tem 20 anos.
+Bruno tem 30 anos.
+Roberto tem 22 anos.
+""")
+
+
+def aprender_dicionario():
+    print("\n📝 Criar um dicionario:")
+    print("""Dicionários usam chaves (ex: "nome") para valores.""")
+    print("""pessoa = {"nome": "Ana", "idade": 20}  
+print(pessoa["nome"])  # Ana  """)
+    print("Assim você associa Ana a idade que ela tem.")
+
+
+def aprender_funções():
+    print("\n📝 Funções:")
+    print("Funções são blocos de código reutilizáveis.")
+    print("""def somar(a, b):  
+    return a + b  
+print("Soma:", somar(2, 3))  # 5  """)
+    print(" Essa função soma as variáveis a + b.")
+
+
+def aprender_lista():
+    print("\n📝 Lista:")
+    print("Listas guardam múltiplos valores. Exemplo:")
+    print("""frutas = ["maçã", "banana", "uva"]  
+print("Minha lista é ", frutas)  #output: Minha lista é [maçã, banana, uva]  """)
+    print("""print("frutas[0]") #output: maçã""")
+
+
+def aprender_loops():
+    print("\n📝 FOR:")
+    print("O laço FOR nos permite percorrer os itens de uma coleção e, para cada um deles, executar o bloco de código declarado no loop. Sua sintaxe é a seguinte:")
+    print("""nomes = ['Pedro', 'João', 'Leticia']
+for n in nomes:
+     print(n)""")
+    print("A variável definida na linha 1 é uma lista inicializada com uma sequência de valores do tipo string. A instrução for percorre todos esses elementos, um por vez e, em cada caso, atribui o valor do item à variável n, que é impressa em seguida. O resultado, então, é a impressão de todos os nomes contidos na lista.")
+
+
+def aprender_if():
+    print("\n📝 if toma decisões baseadas em condições.")
+    print("""idade = int(input("Quantos anos você tem? "))  
+if idade >= 18:  
+    print("Você é maior de idade!")  
+else:  
+    print("Você é menor de idade.")  """)
+    print("traduzindo: se idade for maior ou igual a 18 aparecerá você é maior de idade!. Caso contrario mostrará a opção que foi descrita no else.")
+
+
+def aprender_opsimples():
+    print("\n📝 Python faz contas como uma calculadora. Exemplo:")
+    print("""soma = 5 + 3  
+print("5 + 3 =", soma) """)
+    print("o valor da variável soma será igual a 8")
+
+
+def aprender_variaveis():
+    print("\n📝 Variáveis são como *caixinhas* que armazenam dados. Exemplo:")
+    print("""idade = 18  
+print("Minha idade é", idade)  
+no console aparecerá: Minha idade é 18""")
+
+
+def aprender_print():
+    print("\n📝 A função print():")
+    print("Mostra mensagens na tela. Sintaxe: print('mensagem')")
+    print("\nExemplos:")
+    print('print("Olá mundo!")  # Exibe texto')
+    print('print(2 + 2)        # Exibe resultado de operação')
+    print('print("Total:", 10) # Exibe múltiplos valores')
+
+
+def aprender_input():
+    print("\n📝 A função input():")
+    print("Recebe dados do usuário. Sintaxe: variavel = input('mensagem')")
+    print("\nExemplo:")
+    print('nome = input("Digite seu nome: ")')
+    print('print("Olá,", nome, "!")')
+
+
+def aprender():
+    print("\nMÓDULO DE APRENDIZADO")
+    aprender_print()
+    aprender_input()
+    aprender_variaveis()
+    aprender_opsimples()
+    aprender_if()
+    aprender_lista()
+    aprender_loops()
+    aprender_funções()
+    aprender_dicionario()
+    aprender_dicionarioalfabetico()
+    aprender_strings()
+    aprender_while()
+    aprender_tratamentoderros()
+    aprender_datahora()
+    aprender_sqrt()
+
+# Funções do quiz
+
+
+def fazer_pergunta(pergunta, opcoes, resposta_correta, max_tentativas=3):
+    tentativas = 0
+    opcoes_validas = [opcao[0].lower() for opcao in opcoes]
+
+    while tentativas < max_tentativas:
+        print(f"\n{pergunta}")
+        for opcao in opcoes:
+            print(opcao)
+
+        resposta = input("\nSua resposta: ").strip().lower()
+
+        if resposta not in opcoes_validas:
+            print(
+                f"Opção inválida! Digite apenas: {', '.join(opcoes_validas)}")
+            tentativas += 1
+            print(f"Tentativas restantes: {max_tentativas - tentativas}")
+            continue
+
+        if resposta == resposta_correta.lower():
+            print("✅ Correto!")
+            return True
+        else:
+            tentativas += 1
+            if tentativas < max_tentativas:
+                print(
+                    f"❌ Incorreto! Tentativas restantes: {max_tentativas - tentativas}")
+            else:
+                print(f"❌ Incorreto! Você esgotou suas tentativas.")
+                print(f"A resposta correta é: {resposta_correta}")
+                return False
+
+    return False
+
+
+def quiz():
+    print("\nTESTE SEUS CONHECIMENTOS")
+    nome = input(
+            "\nAntes de começar nossa experiência, por favor nos diga seu nome:\n")
+    print(f"Seja muito bem vindo ao nosso software  " + nome.upper())
+
+    perguntas = [
+        {
+            "texto": "Qual das seguintes opções descreve corretamente a função print()?",
+            "opcoes": [
+                "a) Só exibe números inteiros",
+                "b) Pode exibir múltiplos argumentos separados por vírgula",
+                "c) Requer o módulo sys para funcionar",
+                "d) Retorna o valor impresso"
+            ],
+            "resposta": "b"
+        },
+        {
+            "texto": "Para que serve a função input()?",
+            "opcoes": [
+                "1) Exibir dados no console",
+                "2) Receber dados do usuário",
+                "3) Converter strings para números",
+                "4) Fazer cálculos matemáticos"
+            ],
+            "resposta": "2"
+        },
+        {
+            "texto": "Qual o nome do criador do Pynthon?",
+            "opcoes": [
+                "a) Nikolas Python",
+                "b) Fausto Silva",
+                "c) Mark Zuckerberg",
+                "d) Guido van Rossum"
+            ],
+            "resposta": "d"
+        },
+        {
+            "texto": "Como declarar uma variável idade com valor 25?",
+            "opcoes": [
+                "a) var idade = 25",
+                "b) idade == 25",
+                "c) idade = 25",
+                "d) 25 = idade"
+            ],
+            "resposta": "c"
+
+        },
+        {
+            "texto": "O que este código faz?\nif 10 > 5:\nprint(Verdadeiro)",
+            "opcoes": [
+                "a) Não imprime nada",
+                "b) Imprime Verdadeiro",
+                "c) Causa um erro",
+                "d) Imprime Falso"
+            ],
+            "resposta": "b"
+        },
+        {
+
+            "texto": "O que este código imprime?\ndef soma(a, b):\n  def soma(a, b):\nprint(soma(2, 3))",
+            "opcoes": [
+                "a) a + b",
+                "b) 5 ",
+                "c) 23",
+                "d) Nada"
+            ],
+            "resposta": "b"
+
+        },
+        {
+            "texto": "Qual símbolo representa comentários em Python?",
+            "opcoes":[
+                "a) //",
+                "b) /* */",
+                "c) # ",
+                "d) --"
+           ],
+           "resposta": "c"
+         },
+         {
+            "texto": "Como acessar o segundo item da lista frutas = ['maçã', 'banana', 'laranja']??",
+            "opcoes": [
+                "a) frutas[0]",
+                "b) frutas[1]",
+                "c) frutas[2]",
+                "d) frutas.second"
+            ],  
+            "resposta": "b"
+
+
+         },
+         {
+            "texto": "Qual método converte uma string para maiúsculas?",
+            "opcoes": [
+                "a) .lower()",
+                "b) .capitalize()",
+                "c) .upper()",
+                "d) .replace()"
+            ],
+            "resposta": "c"
+         },
+         {
+            "texto": "Qual loop repete um bloco enquanto uma condição é verdadeira?",
+            "opcoes": [
+                "a) for",
+                "b) while ",
+                "c) repeat",
+                "d) loop"
+            ],
+            "resposta": "b"
+         },
+    ]
+
+    acertos = 0
+    for pergunta in perguntas:
+        if fazer_pergunta(pergunta["texto"], pergunta["opcoes"], pergunta["resposta"]):
+            acertos += 1
+
+    print(
+        f"\nResultado final: Parabéns, {nome}.\n Você acertou {acertos} de {len(perguntas)} perguntas!")
+
+# Função principal
+
+
+def main():
+    while True:
+        exibir_menu()
+        opcao = input("\nEscolha uma opção (1-3): ").strip()
+
+        if opcao == "1":
+            aprender()
+        elif opcao == "2":
+            quiz()
+        elif opcao == "3":
+            print("\nObrigado por usar nosso programa! Até logo!")
+            sys.exit()
+        else:
+            print("Opção inválida. Por favor, escolha 1, 2 ou 3.")
+
+
+if __name__ == "__main__":
+    main()
